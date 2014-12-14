@@ -1,0 +1,26 @@
+settings:
+    # General plugin settings, not much to do here...
+    general:
+        # Whether to anonymously send some trivial data (version, max players, etc) to the MCStats servers.
+        stats: true
+    # Broadcast settings!
+    broadcast:
+        # Here you put the messages the bar will broadcast.
+        # Make sure to enclose all your messages in quotes!
+        # You may also use color codes.
+        # Tip: %player% will be automatically replaced with the viewing player's name!
+        messages:
+            - '&5Hello, &9%player%!'
+            - '&5&lActionBarBroadcast &dis awesome, isn''t it?'
+        # This is the length between messages (in seconds).
+        # Currently I haven't found a way to change how long the message is shown.
+        duration: 20
+    # DO NOT TOUCH THIS!!!
+    # This is essential to the survival of your configuration settings!
+    config-version: 1.0
+            
+    
+        
+    
+
+    

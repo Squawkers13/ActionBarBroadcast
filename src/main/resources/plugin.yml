@@ -1,0 +1,21 @@
+name: ActionBarBroadcast
+main: net.pekkit.actionbarbroadcast.ActionBarBroadcast
+version: maven-version-number
+description: ActionBarBroadcast
+author: Squawkers13
+authors: [ReeseNator]
+website: http://dev.bukkit.org/bukkit-plugins/bossbroadcaster/
+commands:
+    ab:
+      aliases: [actionbar, actionbarbroadcast]
+      description: Base command for ActionBarBroadcast.
+    broadcast:
+      aliases: [bc, bcast]
+      description: Broadcast a message to all online players.
+permissions:
+    actionbarbroadcast.broadcast:
+        description: Broadcast a message.
+        default: op
+    actionbarbroadcast.reload:
+        description: Reload the plugin's configuration.
+        default: op
