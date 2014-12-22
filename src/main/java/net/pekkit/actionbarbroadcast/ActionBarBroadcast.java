@@ -56,7 +56,7 @@ public class ActionBarBroadcast extends JavaPlugin {
             
             MessageSender.log("&cIncompatible config detected! Renaming it to config-" + old + ".yml");
             MessageSender.log("&cA new config has been created, please transfer your settings.");
-            MessageSender.log("&cWhen you have finished, type &6/econ reload&c to load your settings.");
+            MessageSender.log("&cWhen you have finished, type &6/ab reload&c to load your settings.");
             try {
                 getConfig().save(new File(getDataFolder(), "config-" + old + ".yml"));
             } catch (IOException ex) {

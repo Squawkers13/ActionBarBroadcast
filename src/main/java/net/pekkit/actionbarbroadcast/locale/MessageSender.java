@@ -34,7 +34,7 @@ import org.bukkit.util.ChatPaginator;
  */
 public class MessageSender {
     
-    private static final String prefix = "&f[&5BossBroadcaster&f] ";
+    private static final String prefix = "&f[&5ActionBarBroadcast&f] ";
 
     /**
      * Plugin method to easily send messages to players (and console too). This

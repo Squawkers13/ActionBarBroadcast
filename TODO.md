@@ -1,8 +1,7 @@
 #TODO
 
-##Current version `2.0`
+##Current version `2.0.5`
 1. Tab completion?
 
 ##Future version `2.1`
-1. Tab list headers
-2. Login message
+1. Login message

@@ -157,7 +157,7 @@ public class BaseCommandExecutor implements CommandExecutor {
             String old = plugin.getConfig().getString("settings.config-version", "OLD");
             MessageSender.sendMsg(sender, "&cIncompatible config detected! Renaming it to config-" + old + ".yml");
             MessageSender.sendMsg(sender, "&cA new config has been created, please transfer your settings.");
-            MessageSender.sendMsg(sender, "&cWhen you have finished, type &6/econ reload&c to load your settings.");
+            MessageSender.sendMsg(sender, "&cWhen you have finished, type &6/ab reload&c to load your settings.");
             try {
                 plugin.getConfig().save(new File(plugin.getDataFolder(), "config-" + old + ".yml"));
             } catch (IOException ex) {
