@@ -21,7 +21,7 @@ settings:
         headers: true
         # The headers to add. 
         headerTop: '&dThis &aMinecraft &dServer'
-        headerBottom: '&duses &5&lActionBarBroadcast'
+        headerBottom: '&duses &5ActionBarBroadcast'
     # DO NOT TOUCH THIS!!!
     # This is essential to the survival of your configuration settings!
     config-version: 1.1
