@@ -23,10 +23,12 @@
  */
 package net.pekkit.actionbarbroadcast.util;
 
+import java.lang.reflect.Field;
 import net.minecraft.server.v1_8_R1.ChatSerializer;
 import net.minecraft.server.v1_8_R1.EnumTitleAction;
 import net.minecraft.server.v1_8_R1.IChatBaseComponent;
 import net.minecraft.server.v1_8_R1.PacketPlayOutChat;
+import net.minecraft.server.v1_8_R1.PacketPlayOutPlayerListHeaderFooter;
 import net.minecraft.server.v1_8_R1.PacketPlayOutTitle;
 import net.minecraft.server.v1_8_R1.PlayerConnection;
 import org.bukkit.ChatColor;
@@ -48,5 +50,28 @@ public class ActionUtils {
         IChatBaseComponent cbc = ChatSerializer.a("{\"text\": \"" + ChatColor.translateAlternateColorCodes('&', msg) + "\"}");
         PacketPlayOutChat ppoc = new PacketPlayOutChat(cbc, (byte) 2);
         ((CraftPlayer) p).getHandle().playerConnection.sendPacket(ppoc);
+    }
+    
+    public static void sendHeaderAndFooter(Player p, String head, String foot) {
+        CraftPlayer craftplayer = (CraftPlayer) p;
+        PlayerConnection connection = craftplayer.getHandle().playerConnection;
+        IChatBaseComponent header = ChatSerializer.a("{'color': '" + "', 'text': '" + ChatColor.translateAlternateColorCodes('&', head).replace("'", "\'") + "'}");
+        IChatBaseComponent footer = ChatSerializer.a("{'color': '" + "', 'text': '" + ChatColor.translateAlternateColorCodes('&', foot).replace("'", "\'") + "'}");
+        PacketPlayOutPlayerListHeaderFooter packet = new PacketPlayOutPlayerListHeaderFooter();
+
+        try {
+            Field headerField = packet.getClass().getDeclaredField("a");
+            headerField.setAccessible(true);
+            headerField.set(packet, header);
+            headerField.setAccessible(!headerField.isAccessible());
+
+            Field footerField = packet.getClass().getDeclaredField("b");
+            footerField.setAccessible(true);
+            footerField.set(packet, footer);
+            footerField.setAccessible(!footerField.isAccessible());
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        connection.sendPacket(packet);
     }
 }
