@@ -86,7 +86,7 @@ public class ActionUtils {
         connection.sendPacket(packet);
     }
     
-    public static String buildJSON(String msg) {
+    private static String buildJSON(String msg) {
         return "{text:\"" + ChatColor.translateAlternateColorCodes('&', msg) + "\"}";
     }
 }

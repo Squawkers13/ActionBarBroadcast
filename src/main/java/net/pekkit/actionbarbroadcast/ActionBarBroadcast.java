@@ -26,6 +26,7 @@ package net.pekkit.actionbarbroadcast;
 import java.io.File;
 import java.io.IOException;
 import net.pekkit.actionbarbroadcast.commands.BaseCommandExecutor;
+import net.pekkit.actionbarbroadcast.listeners.PlayerListener;
 import net.pekkit.actionbarbroadcast.locale.MessageSender;
 import net.pekkit.actionbarbroadcast.util.Constants;
 import org.bukkit.plugin.java.JavaPlugin;
@@ -80,6 +81,12 @@ public class ActionBarBroadcast extends JavaPlugin {
         
         getCommand("ab").setExecutor(bce);
         getCommand("broadcast").setExecutor(bce);
+        
+        // --- Tab list headers ---
+        if (getConfig().getBoolean("settings.util.headers", true)) {
+            MessageSender.log("Enabling tab list headers!");
+            getServer().getPluginManager().registerEvents(new PlayerListener(this), this);
+        }
         
         bbh.startBroadcasting();
     }
