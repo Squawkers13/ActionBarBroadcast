@@ -41,22 +41,33 @@ public class ActionUtils {
     public static void sendTitle(Player player, String title, String subtitle) {
         CraftPlayer craftplayer = (CraftPlayer) player;
         PlayerConnection connection = craftplayer.getHandle().playerConnection;
-        IChatBaseComponent titleJSON = ChatSerializer.a("{'text': '" + ChatColor.translateAlternateColorCodes('&', title).replace("'", "\'") + "'}");
+        IChatBaseComponent titleJSON = ChatSerializer.a(buildJSON(title));
         PacketPlayOutTitle titlePacket = new PacketPlayOutTitle(EnumTitleAction.TITLE, titleJSON, Constants.TITLE_FADE, Constants.TITLE_STAY, Constants.TITLE_FADE);
         connection.sendPacket(titlePacket);
     }
+    
+    public static void sendTitle(Player player, String title, String subtitle, int fadeIn, int stay, int fadeOut) {
+        CraftPlayer craftplayer = (CraftPlayer) player;
+        PlayerConnection connection = craftplayer.getHandle().playerConnection;
+        IChatBaseComponent titleJSON = ChatSerializer.a(buildJSON(title));
+        IChatBaseComponent subtitleJSON = ChatSerializer.a(buildJSON(subtitle));
+        PacketPlayOutTitle titlePacket = new PacketPlayOutTitle(EnumTitleAction.TITLE, titleJSON, fadeIn, stay, fadeOut);
+        PacketPlayOutTitle subtitlePacket = new PacketPlayOutTitle(EnumTitleAction.SUBTITLE, subtitleJSON);
+        connection.sendPacket(titlePacket);
+        connection.sendPacket(subtitlePacket);
+    }
 
     public static void sendActionBar(Player p, String msg) {
-        IChatBaseComponent cbc = ChatSerializer.a("{\"text\": \"" + ChatColor.translateAlternateColorCodes('&', msg) + "\"}");
+        IChatBaseComponent cbc = ChatSerializer.a(buildJSON(msg));
         PacketPlayOutChat ppoc = new PacketPlayOutChat(cbc, (byte) 2);
         ((CraftPlayer) p).getHandle().playerConnection.sendPacket(ppoc);
     }
-    
+
     public static void sendHeaderAndFooter(Player p, String head, String foot) {
         CraftPlayer craftplayer = (CraftPlayer) p;
         PlayerConnection connection = craftplayer.getHandle().playerConnection;
-        IChatBaseComponent header = ChatSerializer.a("{'color': '" + "', 'text': '" + ChatColor.translateAlternateColorCodes('&', head).replace("'", "\'") + "'}");
-        IChatBaseComponent footer = ChatSerializer.a("{'color': '" + "', 'text': '" + ChatColor.translateAlternateColorCodes('&', foot).replace("'", "\'") + "'}");
+        IChatBaseComponent header = ChatSerializer.a(buildJSON(head));
+        IChatBaseComponent footer = ChatSerializer.a(buildJSON(foot));
         PacketPlayOutPlayerListHeaderFooter packet = new PacketPlayOutPlayerListHeaderFooter();
 
         try {
@@ -73,5 +84,9 @@ public class ActionUtils {
             e.printStackTrace();
         }
         connection.sendPacket(packet);
+    }
+    
+    public static String buildJSON(String msg) {
+        return "{text:\"" + ChatColor.translateAlternateColorCodes('&', msg) + "\"}";
     }
 }

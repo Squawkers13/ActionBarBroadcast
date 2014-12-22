@@ -15,9 +15,13 @@ settings:
         # This is the length between messages (in seconds).
         # Currently I haven't found a way to change how long the message is shown.
         duration: 20
+    other:
+        headers: true
+        headerTop: 'This Minecraft Server'
+        headerBottom: 'uses ActionBarBroadcast'
     # DO NOT TOUCH THIS!!!
     # This is essential to the survival of your configuration settings!
-    config-version: 1.0
+    config-version: 1.5
             
     
         
