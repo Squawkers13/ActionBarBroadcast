@@ -41,14 +41,18 @@
             <url>http://hub.spigotmc.org/nexus/content/groups/public/</url>
         </repository>
         <repository>
+            <id>TARDIS Repo</id>
+            <url>http://tardisjenkins.duckdns.org:8888/</url>
+        </repository>
+        <repository>
             <id>Plugin Metrics</id>
             <url>http://repo.mcstats.org/content/repositories/public</url>
         </repository>
     </repositories>
     <dependencies>
         <dependency>
-            <groupId>org.spigotmc</groupId>
-            <artifactId>spigot-api</artifactId>
+            <groupId>org.bukkit</groupId>
+            <artifactId>bukkit</artifactId>
             <version>1.8-R0.1-SNAPSHOT</version>
             <type>jar</type>
         </dependency>
