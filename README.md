@@ -1,5 +1,6 @@
 ActionBarBroadcast
 ==================
+[![Build Status](https://snap-ci.com/Squawkers13/ActionBarBroadcast/branch/master/build_image)](https://snap-ci.com/Squawkers13/ActionBarBroadcast/branch/master)
 
 ActionBarBroadcast is a broadcasting plugin that uses 1.8's new action bar and title system!
 
