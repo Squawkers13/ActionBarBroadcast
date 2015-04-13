@@ -24,16 +24,16 @@
 package net.pekkit.actionbarbroadcast.util;
 
 import java.lang.reflect.Field;
-import net.minecraft.server.v1_8_R1.ChatSerializer;
-import net.minecraft.server.v1_8_R1.EnumTitleAction;
-import net.minecraft.server.v1_8_R1.IChatBaseComponent;
-import net.minecraft.server.v1_8_R1.PacketPlayOutChat;
-import net.minecraft.server.v1_8_R1.PacketPlayOutPlayerListHeaderFooter;
-import net.minecraft.server.v1_8_R1.PacketPlayOutTitle;
-import net.minecraft.server.v1_8_R1.PlayerConnection;
+import net.minecraft.server.v1_8_R2.IChatBaseComponent.ChatSerializer;
+import net.minecraft.server.v1_8_R2.PacketPlayOutTitle.EnumTitleAction;
+import net.minecraft.server.v1_8_R2.IChatBaseComponent;
+import net.minecraft.server.v1_8_R2.PacketPlayOutChat;
+import net.minecraft.server.v1_8_R2.PacketPlayOutPlayerListHeaderFooter;
+import net.minecraft.server.v1_8_R2.PacketPlayOutTitle;
+import net.minecraft.server.v1_8_R2.PlayerConnection;
 import org.bukkit.ChatColor;
 
-import org.bukkit.craftbukkit.v1_8_R1.entity.CraftPlayer;
+import org.bukkit.craftbukkit.v1_8_R2.entity.CraftPlayer;
 import org.bukkit.entity.Player;
 
 public class ActionUtils {
