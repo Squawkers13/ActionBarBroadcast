@@ -3,8 +3,7 @@ main: net.pekkit.actionbarbroadcast.ActionBarBroadcast
 version: maven-version-number
 description: ActionBarBroadcast
 author: Squawkers13
-authors: [ReeseNator]
-website: http://dev.bukkit.org/bukkit-plugins/bossbroadcaster/
+website: http://www.spigotmc.org/resources/actionbarbroadcast.2398/
 commands:
     ab:
       aliases: [actionbar, actionbarbroadcast]

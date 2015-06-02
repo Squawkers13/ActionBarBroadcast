@@ -4,8 +4,8 @@
   <groupId>net.pekkit</groupId>
   <artifactId>ActionBarBroadcast</artifactId>
   <name>ActionBar Broadcast</name>
-  <version>2.0.5</version>
-  <url>http://dev.bukkit.org/bukkit-plugins/bossbroadcaster/</url>
+  <version>2.0.8</version>
+  <url>http://www.spigotmc.org/resources/actionbarbroadcast.2398/</url>
   <issueManagement>
     <system>GitHub Issues</system>
     <url>https://github.com/Squawkers13/ActionBarBroadcast/issues</url>
@@ -81,21 +81,25 @@
       <url>http://hub.spigotmc.org/nexus/content/groups/public/</url>
     </repository>
     <repository>
+      <id>TARDIS Repo</id>
+      <url>http://tardisjenkins.duckdns.org:8888/</url>
+    </repository>
+    <repository>
       <id>Plugin Metrics</id>
       <url>http://repo.mcstats.org/content/repositories/public</url>
     </repository>
   </repositories>
   <dependencies>
     <dependency>
-      <groupId>org.spigotmc</groupId>
-      <artifactId>spigot-api</artifactId>
-      <version>1.8-R0.1-SNAPSHOT</version>
+      <groupId>org.bukkit</groupId>
+      <artifactId>bukkit</artifactId>
+      <version>1.8.6-R0.1-SNAPSHOT</version>
       <scope>compile</scope>
     </dependency>
     <dependency>
       <groupId>org.bukkit</groupId>
       <artifactId>craftbukkit</artifactId>
-      <version>1.8-R0.1-SNAPSHOT</version>
+      <version>1.8.6-R0.1-SNAPSHOT</version>
       <scope>compile</scope>
     </dependency>
   </dependencies>
